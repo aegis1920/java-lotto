@@ -24,6 +24,18 @@ public class LottoNumber implements Comparable<LottoNumber> {
         this.lottoNumber = input;
     }
 
+    public static LottoNumber from(String input) {
+        validateNullOrBlank(input);
+        validateNumeric(input);
+        int number = Integer.parseInt(input);
+        return from(number);
+    }
+
+    public static LottoNumber from(int number) {
+        validateLottoNumberRange(number);
+        return lottoNumberPool.get(number);
+    }
+
     private static LottoNumber createLottoNumber(int number) {
         return new LottoNumber(number);
     }
@@ -74,16 +86,4 @@ public class LottoNumber implements Comparable<LottoNumber> {
         return lottoNumber + MAKE_STR;
     }
 
-    public static LottoNumber from(String input) {
-        validateNullOrBlank(input);
-        validateNumeric(input);
-        int number = Integer.parseInt(input);
-        validateLottoNumberRange(number);
-        return lottoNumberPool.get(number);
-    }
-
-    public static LottoNumber from(int number) {
-        validateLottoNumberRange(number);
-        return lottoNumberPool.get(number);
-    }
 }

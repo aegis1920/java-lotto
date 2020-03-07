@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ManualLottoGenerator implements LottoTicketsGenerator {
 
-    List<String> manualLottoTickets;
+    private List<String> manualLottoTickets;
 
     public ManualLottoGenerator(List<String> manualLottoTickets) {
         this.manualLottoTickets = manualLottoTickets;
