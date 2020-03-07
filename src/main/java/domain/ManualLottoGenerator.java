@@ -21,7 +21,6 @@ public class ManualLottoGenerator implements LottoTicketsGenerator {
         return lottoTickets;
     }
 
-
     @Override
     public List<LottoTicket> generate() {
         return createManualLottoTickets(manualLottoTickets);
